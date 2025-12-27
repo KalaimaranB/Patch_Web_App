@@ -1,0 +1,349 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode instead of media query (required for theme toggle) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Medical Blue Theme */
+  --primary: #1E40AF;
+  --primary-light: #3B82F6;
+  --primary-dark: #1E3A8A;
+  --accent: #0EA5E9;
+
+  /* Background colors */
+  --background: #F8FAFC;
+  --surface: #FFFFFF;
+  --surface-hover: #F1F5F9;
+
+  /* Text colors */
+  --text-primary: #1E293B;
+  --text-secondary: #64748B;
+  --text-muted: #94A3B8;
+
+  /* Status colors */
+  --success: #10B981;
+  --success-light: #D1FAE5;
+  --warning: #F59E0B;
+  --warning-light: #FEF3C7;
+  --error: #EF4444;
+  --error-light: #FEE2E2;
+
+  /* Border colors */
+  --border: #E2E8F0;
+  --border-focus: #3B82F6;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Dark mode variables */
+.dark {
+  --primary: #3B82F6;
+  --primary-light: #60A5FA;
+  --primary-dark: #1E40AF;
+  --accent: #38BDF8;
+
+  --background: #030712;
+  --surface: #111827;
+  --surface-hover: #1F2937;
+
+  --text-primary: #F9FAFB;
+  --text-secondary: #9CA3AF;
+  --text-muted: #6B7280;
+
+  --success: #34D399;
+  --success-light: #064E3B;
+  --warning: #FBBF24;
+  --warning-light: #78350F;
+  --error: #F87171;
+  --error-light: #7F1D1D;
+
+  --border: #374151;
+  --border-focus: #60A5FA;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--text-primary);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ===== TREMOR COMPONENT OVERRIDES ===== */
+
+/* Tremor Card */
+.tremor-Card-root {
+  border-radius: 16px !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow-sm) !important;
+  background-color: var(--surface) !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark .tremor-Card-root {
+  background-color: #111827 !important;
+  border-color: #374151 !important;
+}
+
+/* Tremor Text - Default styling */
+.tremor-Text-root {
+  color: var(--text-secondary) !important;
+}
+
+.dark .tremor-Text-root {
+  color: #9CA3AF !important;
+}
+
+/* Tremor Metric */
+.tremor-Metric-root {
+  color: var(--text-primary) !important;
+}
+
+.dark .tremor-Metric-root {
+  color: #F9FAFB !important;
+}
+
+/* Tremor Table */
+.dark .tremor-TableCell-root,
+.dark .tremor-TableHeaderCell-root {
+  color: #D1D5DB !important;
+  border-color: #374151 !important;
+}
+
+.dark .tremor-Table-root {
+  background-color: transparent !important;
+}
+
+.dark .tremor-TableRow-root:hover {
+  background-color: #1F2937 !important;
+}
+
+/* Tremor ProgressBar */
+.dark .tremor-ProgressBar-root {
+  background-color: #374151 !important;
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes pulse-slow {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s ease-in-out infinite;
+}
+
+/* ===== SIDEBAR DARK MODE ===== */
+
+.dark aside {
+  background-color: #111827 !important;
+  border-color: #1F2937 !important;
+}
+
+.dark aside .border-gray-100 {
+  border-color: #1F2937 !important;
+}
+
+/* ===== LIGHT MODE EXPLICIT STYLES ===== */
+/* Ensure light mode elements are properly styled when not in dark mode */
+
+/* Body background enforcement */
+html:not(.dark) body {
+  background-color: #F8FAFC !important;
+  color: #1E293B !important;
+}
+
+/* Tremor Card - Light mode */
+html:not(.dark) .tremor-Card-root {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Tremor Text - Light mode */
+html:not(.dark) .tremor-Text-root {
+  color: #64748B !important;
+}
+
+/* Tremor Metric - Light mode */
+html:not(.dark) .tremor-Metric-root {
+  color: #1E293B !important;
+}
+
+/* Tremor Table - Light mode */
+html:not(.dark) .tremor-TableCell-root,
+html:not(.dark) .tremor-TableHeaderCell-root {
+  color: #374151 !important;
+  border-color: #E5E7EB !important;
+}
+
+html:not(.dark) .tremor-Table-root {
+  background-color: transparent !important;
+}
+
+html:not(.dark) .tremor-TableRow-root:hover {
+  background-color: #F9FAFB !important;
+}
+
+/* Tremor ProgressBar - Light mode */
+html:not(.dark) .tremor-ProgressBar-root {
+  background-color: #E5E7EB !important;
+}
+
+/* Sidebar - Light mode */
+html:not(.dark) aside {
+  background-color: #FFFFFF !important;
+  border-color: #E5E7EB !important;
+}
+
+html:not(.dark) aside .border-gray-100 {
+  border-color: #F3F4F6 !important;
+}
+
+/* Main content area - Light mode */
+html:not(.dark) .bg-slate-50 {
+  background-color: #F8FAFC !important;
+}
+
+/* Header - Light mode */
+html:not(.dark) header {
+  background-color: #FFFFFF !important;
+  border-color: #E5E7EB !important;
+}
+
+/* ===== COMPREHENSIVE LIGHT MODE TEXT OVERRIDES ===== */
+/* Fix grey text to have proper contrast in light mode */
+
+/* Grey text overrides - make text darker for readability in light mode */
+html:not(.dark) .text-gray-400 {
+  color: #4B5563 !important;
+}
+
+html:not(.dark) .text-gray-500 {
+  color: #374151 !important;
+}
+
+html:not(.dark) .text-gray-600 {
+  color: #1F2937 !important;
+}
+
+/* Tremor Text overrides for light mode - secondary text */
+html:not(.dark) .tremor-Text-root.\!text-gray-400,
+html:not(.dark) .tremor-Text-root.\!text-gray-500 {
+  color: #374151 !important;
+}
+
+html:not(.dark) .tremor-Text-root.\!text-gray-600 {
+  color: #1F2937 !important;
+}
+
+/* Fix icons in light mode */
+html:not(.dark) .text-gray-300 {
+  color: #9CA3AF !important;
+}
+
+/* Sidebar navigation text */
+html:not(.dark) aside nav p.text-gray-400 {
+  color: #6B7280 !important;
+}
+
+html:not(.dark) aside .text-gray-500 {
+  color: #374151 !important;
+}
+
+/* Table text in light mode */
+html:not(.dark) .tremor-TableCell-root {
+  color: #1F2937 !important;
+}
+
+/* Fix small/secondary text */
+html:not(.dark) .text-xs.text-gray-400,
+html:not(.dark) .text-xs.text-gray-500,
+html:not(.dark) .text-sm.text-gray-400,
+html:not(.dark) .text-sm.text-gray-500 {
+  color: #4B5563 !important;
+}
+
+/* Ensure proper contrast for all text elements */
+html:not(.dark) p.text-gray-400,
+html:not(.dark) p.text-gray-500,
+html:not(.dark) span.text-gray-400,
+html:not(.dark) span.text-gray-500 {
+  color: #374151 !important;
+}
+
+/* Font-mono text (device IDs, etc) */
+html:not(.dark) .font-mono.text-gray-400,
+html:not(.dark) .font-mono.text-gray-500 {
+  color: #4B5563 !important;
+}
