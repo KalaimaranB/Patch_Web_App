@@ -38,7 +38,7 @@ export default function DevicesContent({ devices }: DevicesContentProps) {
             {devices.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {devices.map((device) => (
-                        <Card key={device.device_id} className="hover:shadow-md transition-shadow">
+                        <Card key={device.device_id} className="hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
                             <Flex alignItems="start" justifyContent="between" className="mb-4">
                                 <div className={`p-3 rounded-2xl ${device.is_active ? 'bg-emerald-50 dark:bg-emerald-900/30' : 'bg-gray-100 dark:bg-gray-800'}`}>
                                     <Smartphone className={`w-6 h-6 ${device.is_active ? 'text-emerald-600 dark:text-emerald-400' : 'text-gray-400'}`} />
@@ -66,7 +66,11 @@ export default function DevicesContent({ devices }: DevicesContentProps) {
                                         )}
                                         <span className="text-sm">Connection</span>
                                     </div>
-                                    <span className={`text-sm font-medium ${device.is_active ? 'text-emerald-600 dark:text-emerald-400' : 'text-gray-400'}`}>
+                                    <span className={`text-sm font-medium ${device.is_active
+                                            ? 'text-emerald-600 dark:text-emerald-400 flex items-center gap-1'
+                                            : 'text-gray-400'
+                                        }`}>
+                                        {device.is_active && <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />}
                                         {device.is_active ? 'Online' : 'Offline'}
                                     </span>
                                 </div>

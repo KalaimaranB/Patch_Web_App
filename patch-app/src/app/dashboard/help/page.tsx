@@ -48,7 +48,7 @@ export default function HelpPage() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <a
                     href="mailto:support@patchmedical.com"
-                    className="flex items-center gap-3 p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl hover:border-blue-300 dark:hover:border-blue-700 transition-colors group"
+                    className="flex items-center gap-3 p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl hover:border-blue-300 dark:hover:border-blue-700 hover:-translate-y-0.5 hover:shadow-md transition-all group"
                 >
                     <div className="p-2 bg-blue-50 dark:bg-blue-900/30 rounded-xl group-hover:bg-blue-100 dark:group-hover:bg-blue-900/50 transition-colors">
                         <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400" />
@@ -59,31 +59,41 @@ export default function HelpPage() {
                     </div>
                 </a>
 
-                <a
-                    href="#"
-                    className="flex items-center gap-3 p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors group"
+                <div
+                    className="relative flex items-center gap-3 p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl opacity-60 cursor-not-allowed"
+                    title="Coming Soon"
                 >
-                    <div className="p-2 bg-emerald-50 dark:bg-emerald-900/30 rounded-xl group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/50 transition-colors">
+                    <div className="p-2 bg-emerald-50 dark:bg-emerald-900/30 rounded-xl">
                         <MessageCircle className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                     </div>
                     <div>
-                        <p className="text-sm font-medium text-gray-900 dark:text-white">Live Chat</p>
+                        <div className="flex items-center gap-2">
+                            <p className="text-sm font-medium text-gray-900 dark:text-white">Live Chat</p>
+                            <span className="px-2 py-0.5 text-xs font-semibold bg-amber-100 dark:bg-amber-900/50 text-amber-900 dark:text-amber-300 rounded-full">
+                                Soon
+                            </span>
+                        </div>
                         <p className="text-xs text-gray-500 dark:text-gray-400">Chat with support</p>
                     </div>
-                </a>
+                </div>
 
-                <a
-                    href="#"
-                    className="flex items-center gap-3 p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl hover:border-purple-300 dark:hover:border-purple-700 transition-colors group"
+                <div
+                    className="relative flex items-center gap-3 p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl opacity-60 cursor-not-allowed"
+                    title="Coming Soon"
                 >
-                    <div className="p-2 bg-purple-50 dark:bg-purple-900/30 rounded-xl group-hover:bg-purple-100 dark:group-hover:bg-purple-900/50 transition-colors">
+                    <div className="p-2 bg-purple-50 dark:bg-purple-900/30 rounded-xl">
                         <FileText className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                     </div>
                     <div>
-                        <p className="text-sm font-medium text-gray-900 dark:text-white">Documentation</p>
+                        <div className="flex items-center gap-2">
+                            <p className="text-sm font-medium text-gray-900 dark:text-white">Documentation</p>
+                            <span className="px-2 py-0.5 text-xs font-semibold bg-amber-100 dark:bg-amber-900/50 text-amber-900 dark:text-amber-300 rounded-full">
+                                Soon
+                            </span>
+                        </div>
                         <p className="text-xs text-gray-500 dark:text-gray-400">Read the docs</p>
                     </div>
-                </a>
+                </div>
             </div>
 
             {/* FAQs */}
@@ -115,13 +125,16 @@ export default function HelpPage() {
                                         }`}
                                 />
                             </button>
-                            {openFaq === index && (
+                            <div
+                                className={`overflow-hidden transition-all duration-300 ease-in-out ${openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                                    }`}
+                            >
                                 <div className="px-4 pb-4">
                                     <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                                         {faq.answer}
                                     </p>
                                 </div>
-                            )}
+                            </div>
                         </div>
                     ))}
                 </div>

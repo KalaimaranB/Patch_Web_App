@@ -28,11 +28,20 @@ export default function Header() {
 
             {/* Right side - Actions */}
             <div className="flex items-center gap-2 sm:gap-3">
-                {/* Notifications */}
-                <button className="relative p-2 rounded-xl text-gray-400 hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-white transition-all">
-                    <Bell className="w-5 h-5" />
-                    <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-blue-500 rounded-full" />
-                </button>
+                {/* Notifications - Coming Soon */}
+                <div className="relative group">
+                    <button
+                        className="relative p-2 rounded-xl text-gray-300 dark:text-gray-600 cursor-not-allowed opacity-60"
+                        disabled
+                        title="Notifications coming soon"
+                    >
+                        <Bell className="w-5 h-5" />
+                    </button>
+                    <div className="absolute hidden group-hover:block top-full mt-2 right-0 px-3 py-1.5 bg-gray-900 dark:bg-gray-700 text-white text-xs rounded-lg whitespace-nowrap z-50">
+                        Coming Soon
+                        <div className="absolute -top-1 right-4 w-2 h-2 bg-gray-900 dark:bg-gray-700 rotate-45"></div>
+                    </div>
+                </div>
 
                 {/* User dropdown */}
                 <div className="flex items-center gap-2 sm:gap-3 pl-2 sm:pl-3 border-l border-gray-200 dark:border-gray-700">

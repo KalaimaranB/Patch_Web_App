@@ -126,7 +126,7 @@ export default function DashboardContent({ displayName, dashboardData }: Dashboa
             {/* Quick Actions */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/dashboard/devices">
-                    <Card className="hover:shadow-md transition-shadow cursor-pointer group">
+                    <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer group">
                         <Flex alignItems="center" justifyContent="start" className="gap-4">
                             <div className="p-4 bg-blue-50 dark:bg-blue-900/30 rounded-2xl group-hover:bg-blue-100 dark:group-hover:bg-blue-900/50 transition-colors">
                                 <Smartphone className="w-8 h-8 text-blue-600 dark:text-blue-400" />
@@ -140,7 +140,7 @@ export default function DashboardContent({ displayName, dashboardData }: Dashboa
                 </Link>
 
                 <Link href="/dashboard/dosage-history">
-                    <Card className="hover:shadow-md transition-shadow cursor-pointer group">
+                    <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer group">
                         <Flex alignItems="center" justifyContent="start" className="gap-4">
                             <div className="p-4 bg-emerald-50 dark:bg-emerald-900/30 rounded-2xl group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/50 transition-colors">
                                 <Activity className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
