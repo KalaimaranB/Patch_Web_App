@@ -1,0 +1,50 @@
+// Patch Medical brand color scheme for just-the-docs
+// Mirrors the app's Tailwind palette: blue-600 (#2563eb), blue-700 (#1d4ed8)
+
+// Primary / link color — blue-600
+$link-color: #2563eb;
+
+// Body background — matches app's slate-50
+$body-background-color: #f8fafc;
+
+// Sidebar background — white, matching the app sidebar
+$sidebar-color: #ffffff;
+
+// Sidebar heading / logo area
+$nav-width: 264px;
+$content-width: 860px;
+
+// Active nav item highlight — blue-50 bg with blue-700 text
+$nav-list-item-color-active: #1d4ed8;
+
+// Code blocks
+$code-background-color: #f1f5f9;
+$code-linenumber-color: #94a3b8;
+
+// Feedback/callout colors
+// just-the-docs uses these for {: .note}, {: .warning} etc.
+$blue-000: #eff6ff;   // blue-50
+$blue-100: #dbeafe;   // blue-100
+$blue-200: #bfdbfe;   // blue-200
+$blue-300: #93c5fd;
+$blue-400: #60a5fa;
+$blue-500: #3b82f6;
+$blue-600: #2563eb;
+$blue-700: #1d4ed8;
+$blue-800: #1e40af;
+$blue-900: #1e3a8a;
+
+$green-000: #ecfdf5;
+$green-100: #d1fae5;
+$green-300: #6ee7b7;
+$green-600: #059669;
+
+$yellow-000: #fffbeb;
+$yellow-100: #fef3c7;
+$yellow-300: #fcd34d;
+$yellow-600: #d97706;
+
+$red-000: #fef2f2;
+$red-100: #fee2e2;
+$red-300: #fca5a5;
+$red-600: #dc2626;
