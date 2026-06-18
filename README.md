@@ -4,8 +4,6 @@ Patch Web Application is a modern, responsive dashboard designed for monitoring 
 
 **[📖 Documentation](https://kalaimaranb.github.io/Patch_Web_App/)** &nbsp;|&nbsp; **[🚀 Open App](https://patch-web-app.vercel.app/login)**
 
-> **Note:** GitHub Pages must be enabled in repo Settings → Pages → Source: `main` branch, `/docs` folder for the documentation link above to work.
-
 ## Features
 
 - **Caregiver Dashboard**: A comprehensive overview displaying the latest dosage activity, daily and weekly dose metrics, and active device status.

@@ -3,10 +3,16 @@ description: Official documentation for the Patch Medical caregiver dashboard we
 baseurl: "/Patch_Web_App"
 url: "https://kalaimaranb.github.io"
 
-remote_theme: just-the-docs/just-the-docs@v0.10.0
+theme: just-the-docs
 
-# Color scheme override via custom SCSS
+# Brand color scheme (matches the app's blue-600 palette)
 color_scheme: patch
+
+# Aux links (shown in header)
+aux_links:
+  "Open App ↗":
+    - "https://patch-web-app.vercel.app/login"
+aux_links_new_tab: true
 
 # Search
 search_enabled: true
@@ -15,19 +21,12 @@ search:
   previews: 3
   preview_words_before: 5
   preview_words_after: 10
-  tokenizer_separator: /[\s\-/]+/
   rel_url: true
   button: false
 
-# Aux links (shown in header)
-aux_links:
-  "Open App ↗":
-    - "https://patch-web-app.vercel.app/login"
-aux_links_new_tab: true
-
 # Navigation
 nav_enabled: true
-nav_sort: order  # use nav_order front matter
+nav_sort: order
 
 # Footer
 footer_content: "© 2025 Patch Medical Technologies. Documentation reflects the current state of the application."
@@ -38,20 +37,6 @@ back_to_top_text: "Back to top"
 
 # Heading anchors
 heading_anchors: true
-
-# Last modified date
-last_edit_time_format: "%b %e %Y at %I:%M %p"
-
-# Collections for nav
-collections:
-  pages:
-    permalink: "/:path/"
-    output: true
-
-# Plugins
-plugins:
-  - jekyll-seo-tag
-  - jekyll-github-metadata
 
 # Kramdown
 kramdown:
