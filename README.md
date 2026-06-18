@@ -2,6 +2,10 @@
 
 Patch Web Application is a modern, responsive dashboard designed for monitoring medical devices and tracking patient dosage records. It provides an intuitive interface for caregivers to track device statuses, view dosage history, and manage medical data in real-time.
 
+**[📖 Documentation](https://kalaimaranb.github.io/Patch_Web_App/)** &nbsp;|&nbsp; **[🚀 Open App](https://patch-web-app.vercel.app/login)**
+
+> **Note:** GitHub Pages must be enabled in repo Settings → Pages → Source: `main` branch, `/docs` folder for the documentation link above to work.
+
 ## Features
 
 - **Caregiver Dashboard**: A comprehensive overview displaying the latest dosage activity, daily and weekly dose metrics, and active device status.
